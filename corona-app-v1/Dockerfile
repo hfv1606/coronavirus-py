@@ -1,12 +1,11 @@
-FROM python:3.8
-LABEL maintainer "Meinhard Ploner <meinhard.ploner@gmail.com>"
+FROM python
 
 WORKDIR /code
 
-COPY requirements.txt /
-RUN pip install -r /requirements.txt
-COPY ./ ./
+COPY requirements.txt app.py ./
+
+RUN pip install -r requirements.txt
 
 EXPOSE 8050
 
-CMD ["python", "./app.py"]
+CMD ["python", "app.py"]

@@ -1,14 +1,11 @@
 version: "3.7"
 
 services:
-  corona-py:
+  dash:
     build:
       context: .
-    image: corona-py:$VERSION
-    container_name: corona-py
+    image: dashpoc
+    container_name: dashpoc
     ports:
-      - "3810:8050"
-    environment:
-      - TARGET=$TARGET
-    restart: unless-stopped
+      - "8050:8050"
 
